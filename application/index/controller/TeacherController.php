@@ -50,9 +50,17 @@ class TeacherController extends Controller
 
     public function delete()
     {
-        // 直接删除相关关键字记录
-        $state = Teacher::destroy(10);
-        var_dump($state);
-        return '删除成功';
+        $Teacher = new Teacher;
+        // 获取当前记录
+        if (null !== $teacher = $Teacher::get(16))
+        {
+            // 删除当前ID的记录
+            if ($state = $teacher->delete())
+            {
+                return '删除成功';
+            }
+        }
+
+        return '删除失败';
     }
 }
