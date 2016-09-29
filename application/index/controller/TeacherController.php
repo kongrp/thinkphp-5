@@ -26,7 +26,6 @@ class TeacherController extends Controller
     {
         // 接收传入数据
         $teacher = input('post.');
-        $teacher['create_time'] = time();   // 加入时间戳
 
         // 引用Teacher模型
         $Teacher = new Teacher();
