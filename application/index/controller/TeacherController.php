@@ -21,4 +21,21 @@ class TeacherController extends Controller
         // 将数据返回给用户
         return $htmls;
     }
+
+    public function insert()
+    {
+        // 新建测试数据
+        $teacher = array(); // 这种写法也可以 $teacher = [];
+        $teacher['name'] = '王五';
+        $teacher['username'] = 'wangwu';
+        $teacher['sex'] = '1';
+        $teacher['email'] = 'wangwu@yunzhi.club';
+
+        // 引用teacher数据表对应的模型
+        $Teacher = new Teacher();
+
+        // 向teacher表中插入数据并判断是否插入成功
+        $Teacher->data($teacher)->save();
+        return $teacher['name'] . '成功增加至数据表中';
+    }
 }
