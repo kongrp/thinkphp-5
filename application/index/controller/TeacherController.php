@@ -50,12 +50,15 @@ class TeacherController extends Controller
 
     public function delete()
     {
+        var_dump(input('get.'));
+        die();
+
         // 直接删除相关关键字记录
-        if ($count = Teacher::destroy(9))
+        if ($count = Teacher::destroy(15))
         {
             return '成功删除' . $count . '条数据';
         }
-
+       
         return '删除失败';
     }
 }
