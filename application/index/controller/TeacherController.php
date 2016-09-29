@@ -24,9 +24,15 @@ class TeacherController extends Controller
 
     public function insert()
     {
-        var_dump($_POST);
-        $postData = input('post.');
-        var_dump($postData);
+        // 接收传入数据
+        $teacher = input('post.');
+
+        // 引用Teacher模型
+        $Teacher = new Teacher();
+        $Teacher->data($teacher)->save();// 插入数据
+
+        // 反馈结果
+        return $teacher['name'] . '新增成功';
     }
 
     public function add()
