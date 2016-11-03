@@ -45,13 +45,13 @@ return [
     // 是否开启多语言
     'lang_switch_on'         => false,
     // 默认全局过滤方法 用逗号分隔多个
-    'default_filter'         => 'htmlspecialchars',
+    'default_filter'         => '',
     // 默认语言
     'default_lang'           => 'zh-cn',
     // 应用类库后缀
     'class_suffix'           => false,
     // 控制器类后缀
-    'controller_suffix'      => true,
+    'controller_suffix'      => false,
 
     // +----------------------------------------------------------------------
     // | 模块设置
