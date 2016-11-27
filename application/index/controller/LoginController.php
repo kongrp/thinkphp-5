@@ -32,4 +32,14 @@ class LoginController extends Controller
             return $this->error('username or password incorrent', url('index'));
         }
     }
+
+    // 注销
+    public function logOut()
+    {
+        if (Teacher::logOut()) {
+            return $this->success('logout success', url('index'));
+        } else {
+            return $this->error('logout error', url('index'));
+        }
+    }
 }

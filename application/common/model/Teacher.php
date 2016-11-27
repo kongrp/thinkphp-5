@@ -61,4 +61,16 @@ class Teacher extends Model
         // 实际的过程中，我还还可以借助其它字符串算法，来实现不同的加密。
         return sha1(md5($password) . 'mengyunzhi');
     }
+
+    /**
+     * 注销
+     * @return bool  成功true，失败false。
+     * @author panjie
+     */
+    static public function logOut()
+    {
+        // 销毁session中数据
+        session('teacherId', null);
+        return true;
+    }
 }
