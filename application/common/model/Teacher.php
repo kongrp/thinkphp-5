@@ -73,4 +73,21 @@ class Teacher extends Model
         session('teacherId', null);
         return true;
     }
+
+     /**
+     * 判断用户是否已登录
+     * @return boolean 已登录true
+     * @author  panjie <panjie@yunzhiclub.com>
+     */
+    static public function isLogin()
+    {
+        $teacherId = session('teacherId');
+
+        // isset()和is_null()是一对反义词
+        if (isset($teacherId)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
